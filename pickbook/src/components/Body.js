@@ -7,7 +7,7 @@ const Body = () => {
 const [user, setUser] = useState(false)
   return (
     <div>
-        <Signup/>
+        {user ? <Login/> : <Signup/>}
     </div>
   )
 }

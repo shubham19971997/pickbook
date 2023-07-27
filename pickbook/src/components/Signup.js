@@ -21,13 +21,28 @@ const Signup = () => {
             <form className="my-8">
               <div className="my-4">
                 <p className="my-2 text-left text-xs font-semibold text-slate-500">
+                  Name
+                </p>
+                <input className="block h-8 w-80 px-2 text-sm focus:outline-none focus:bg-slate-50 rounded border-2" />
+              </div>
+              <div className="my-4">
+                <p className="my-2 text-left text-xs font-semibold text-slate-500">
                   Email
+                </p>
+                <input
+                  type="email"
+                  className="block h-8 w-80 px-2 text-sm focus:outline-none focus:bg-slate-50 rounded border-2"
+                />
+              </div>
+              <div>
+                <p className="my-2 text-left text-xs font-semibold text-slate-500">
+                  Password
                 </p>
                 <input className="block h-8 w-80 px-2 text-sm focus:outline-none focus:bg-slate-50 rounded border-2" />
               </div>
               <div>
                 <p className="my-2 text-left text-xs font-semibold text-slate-500">
-                  Password
+                  Confirm Password
                 </p>
                 <input className="block h-8 w-80 px-2 text-sm focus:outline-none focus:bg-slate-50 rounded border-2" />
               </div>
