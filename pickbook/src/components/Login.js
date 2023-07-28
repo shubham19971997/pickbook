@@ -13,7 +13,7 @@ const Login = () => {
         <div className="flex flex-col h-screen w-full text-center items-center justify-center">
           <div className="w-80">
             <p className="text-3xl font-semibold text-left">
-              Welcome back
+              Welcome back!
             </p>
             <p className="text-xs font-medium text-gray-400 mt-4 text-left">
               Welcome Back! Please enter your details.

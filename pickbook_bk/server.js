@@ -16,27 +16,19 @@ const client = new MongoClient(uri, {
 });
 
 //DB connection
+let conn;
 async function run() {
   try {
-    await client.connect();
-    await client.db("admin").command({ ping: 1 });
+    conn = await client.connect();
     console.log(
       "Connected to DB."
     );
-  } finally {
-    await client.close();
+  } catch (err) {
+    console.log(err);
   }
 }
 run().catch(console.dir);
-
-client.connect((err) => {
-  if (err) {
-    console.error("Failed to connect to db", err);
-    process.exit(1);
-  }
-  console.log("Connected to db");
-});
-
+let db = conn.db("pickbook")
 
 //Server connection
 
