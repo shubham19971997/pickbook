@@ -16,10 +16,12 @@ const client = new MongoClient(uri, {
 });
 
 //DB connection
-let conn;
+let db;
 async function run() {
   try {
-    conn = await client.connect();
+    await client.connect();
+    db = client.db("pickbook")
+    
     console.log(
       "Connected to DB."
     );
@@ -28,14 +30,17 @@ async function run() {
   }
 }
 run().catch(console.dir);
-let db = conn.db("pickbook")
 
-//Server connection
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+const getRoute = require('./routes/getRoutes');
+app.use('/',getRoute)
 
 app.listen(1234, () => {
   console.log("Server is running on port 1234");
 });
+
+
+//exports
+module.exports={
+  db,app
+}
